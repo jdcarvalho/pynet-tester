@@ -33,6 +33,7 @@ def check_speed(default_server):
         v_down = s.download()
         v_uplo = s.upload()
     except:
+        print 'Server offline... Internet down!'
         server = 'Server Offline'
         v_down = 0
         v_uplo = 0
