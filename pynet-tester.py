@@ -17,14 +17,6 @@ HELP = """
 
 """
 
-def size_humanize(value):
-    for unit in ['', 'Kb', 'Mb', 'Gb', 'Tb', 'Pb', 'Eb', 'Zb']:
-        if abs(value) < 1024.0:
-            return "%3.1f %s" % (value, unit)
-        value /= 1024.0
-    return "%.1f %s" % (value, 'Yb')
-
-
 def list_servers():
     s = Speedtest()
     print(s.get_servers())
