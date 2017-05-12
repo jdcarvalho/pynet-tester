@@ -67,7 +67,17 @@ def export_data(date):
     with open("{0}.csv".format(date), 'w', newline='', encoding='utf-8') as exp_file:
         w = csv.writer(exp_file, delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL)
         
-        for row in c.execute('select `date`, provider, printf("%.2f", ((d_speed / 1024)/ 1024)) as download, printf("%.2f", ((u_speed / 1024)/ 1024)) as upload from speed where `date` BETWEEN "{0}" AND "{1}" ORDER BY `date`'.format(di, df)):
+        for row in c.execute('''
+            select 
+                `date`, 
+                provider, 
+                printf("%.2f", ((d_speed / 1024)/ 1024)) as download, 
+                printf("%.2f", ((u_speed / 1024)/ 1024)) as upload 
+            from 
+                speed 
+            where 
+                `date` BETWEEN "{0}" AND "{1}" ORDER BY `date`
+            '''.format(di, df)):
             d = datetime.strptime(row[0], "%Y-%m-%d %H:%M:%S.%f" )            
             w.writerow([d.strftime('%d/%m/%Y %H:%M'), row[1], row[2], row[3] ])
             
