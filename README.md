@@ -7,6 +7,10 @@ Main creator: Joao Dias de Carvalho Neto. joao.carvalho <at> maestrus.com
 
 # Installation
 
+Clone this repository
+
+    git clone https://github.com/jdcarvalho/pynet-tester.git
+
 Create an empty python3 virtualenv environment with:
 
     virtualenv ENV_NAME -p python3
