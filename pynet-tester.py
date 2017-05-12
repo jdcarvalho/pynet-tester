@@ -23,11 +23,11 @@ def list_servers():
 
 def check_speed(default_server):
     s = Speedtest()
-    if default_server:
-        s.get_servers([default_server])
-    else:
-        s.get_servers()
     try:
+        if default_server:
+            s.get_servers([default_server])
+        else:
+            s.get_servers()
         print('Starting test...')
         server = s.get_best_server()
         v_down = s.download()
