@@ -21,14 +21,14 @@ install all dependecies:
 
 Usage:
 
-On source directory execute:
+On the source directory execute this command to list all servers available:
 
     python pynet-tester --list
     
-Get your best server and check internet speed
+Get your best server and check internet speed with this command:
 
     python pynet-tester --check SERVER_ID
 
-A database will be created to store the results, you can export it to CSV file with
+A database will be created to store the results named speed.db, you can export the data to CSV file with this command
 
     python pynet-tester --export YYYY-MM-DD
