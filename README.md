@@ -2,7 +2,7 @@
 
 This script use Speedtest software to create a database with Internet speed test data and export it for analysis
 
-Main creator: Joao Dias de Carvalho Neto. joao.carvalho <at> maestrus.com
+Main creator: Joao Dias de Carvalho Neto. joao.carvalho at maestrus.com
 
 
 # Installation
