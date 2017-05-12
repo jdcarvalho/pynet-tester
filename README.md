@@ -4,6 +4,8 @@ This script use Speedtest software to create a database with Internet speed test
 
 Main creator: Joao Dias de Carvalho Neto. joao.carvalho at maestrus.com
 
+Script simples para gerar uma base de dados sqlite com testes de download e upload de internet. Funciona baseado no speedtest-cli feito em Python. Basicamente uma forma de manter registros de tempos em tempos de velocidade de download e upload a fim de poder provar o quanto nossas operadoras de TELECOM precisam melhorar nos serviços prestados :/
+
 
 # Installation
 
