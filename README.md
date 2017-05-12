@@ -31,7 +31,7 @@ On the source directory execute this command to list all servers available:
 
     python pynet-tester --list
     
-Get your best server and check internet speed with this command:
+Get your better server ID and check internet speed with this command:
 
     python pynet-tester --check SERVER_ID
 
