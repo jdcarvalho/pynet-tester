@@ -19,7 +19,7 @@ install all dependecies:
 
     pip install -r requirements.txt
 
-Usage:
+# Usage:
 
 On the source directory execute this command to list all servers available:
 
