@@ -17,6 +17,14 @@ HELP = """
 
 """
 
+def size_humanize(value):
+    for unit in ['', 'Kb', 'Mb', 'Gb', 'Tb', 'Pb', 'Eb', 'Zb']:
+        if abs(value) < 1024.0:
+            return "%3.1f %s" % (value, unit)
+        value /= 1024.0
+    return "%.1f %s" % (value, 'Yb')
+
+
 def list_servers():
     s = Speedtest()
     print(s.get_servers())
@@ -67,8 +75,9 @@ def export_data(date):
     with open("{0}.csv".format(date), 'w', newline='', encoding='utf-8') as exp_file:
         w = csv.writer(exp_file, delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL)
         
-        for row in c.execute('SELECT * FROM speed WHERE `date` BETWEEN "{0}" AND "{1}" ORDER BY `date`'.format(di, df)):
-            w.writerow([row[0], row[1], row[2], row[3]])
+        for row in c.execute('select `date`, provider, printf("%.2f", ((d_speed / 1024)/ 1024)) as download, printf("%.2f", ((u_speed / 1024)/ 1024)) as upload from speed where `date` BETWEEN "{0}" AND "{1}" ORDER BY `date`'.format(di, df)):
+            d = datetime.strptime(row[0], "%Y-%m-%d %H:%M:%S.%f" )            
+            w.writerow([d.strftime('%d/%m/%Y %H:%M'), row[1], row[2], row[3] ])
             
     db.commit()
     c.close()
