@@ -29,12 +29,12 @@ install all dependecies:
 
 On the source directory execute this command to list all servers available:
 
-    python pynet-tester --list
+    python pynet-tester.py --list
     
 Get your better server ID and check internet speed with this command:
 
-    python pynet-tester --check SERVER_ID
+    python pynet-tester.py --check SERVER_ID
 
 A database will be created to store the results named speed.db, you can export the data to CSV file with this command
 
-    python pynet-tester --export YYYY-MM-DD
+    python pynet-tester.py --export YYYY-MM-DD
