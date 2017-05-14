@@ -1,6 +1,6 @@
 # pynet-tester
 
-This script use Speedtest software to create a database with Internet speed test data and export it for analysis
+This script uses Speedtest software to create a database with Internet speed test data and export it for further analysis
 
 Main creator: Joao Dias de Carvalho Neto. joao.carvalho at maestrus.com
 
